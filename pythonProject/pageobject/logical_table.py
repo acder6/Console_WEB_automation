@@ -48,16 +48,16 @@ class LogicalTable(BasePage):
         self.click(LogicalTable.cluster_loc)
 
         time.sleep(1)
-        self.wait(jq_loc)
+        self.wait_click(jq_loc)
         self.click(jq_loc)
 
-        self.wait(LogicalTable.logical_loc)
+        self.wait_click(LogicalTable.logical_loc)
         self.click(LogicalTable.logical_loc)
 
-        self.wait(logical_name_loc)
+        self.wait_click(logical_name_loc)
         self.click(logical_name_loc)
 
-        self.wait(LogicalTable.logical_table_loc)
+        self.wait_click(LogicalTable.logical_table_loc)
         self.click(LogicalTable.logical_table_loc)
 
         self.wait_click(LogicalTable.register_button_loc)
@@ -65,6 +65,8 @@ class LogicalTable(BasePage):
 
         self.set_keys(LogicalTable.table_state_input_loc, table_state)
 
+
+        self.wait_click(LogicalTable.qd_loc)
         self.click(LogicalTable.qd_loc)
 
         element = self.wait(LogicalTable.yz_loc)
@@ -83,26 +85,27 @@ class LogicalTable(BasePage):
         self.click(LogicalTable.cluster_loc)
 
         time.sleep(1)
-        self.wait(jq_loc)
+        self.wait_click(jq_loc)
         self.click(jq_loc)
 
-        self.wait(LogicalTable.logical_loc)
+        self.wait_click(LogicalTable.logical_loc)
         self.click(LogicalTable.logical_loc)
 
-        self.wait(logical_name_loc)
+        self.wait_click(logical_name_loc)
         self.click(logical_name_loc)
 
-        self.wait(LogicalTable.logical_table_loc)
+        self.wait_click(LogicalTable.logical_table_loc)
         self.click(LogicalTable.logical_table_loc)
 
 
-        self.wait(table_name_loc)
+        self.wait_click(table_name_loc)
         self.click(table_name_loc)
 
         self.click(LogicalTable.xg_button_loc)
 
         self.set_keys(LogicalTable.table_state_input_loc, table_xg_state)
 
+        self.wait_click(LogicalTable.qd_loc)
         self.click(LogicalTable.qd_loc)
 
         element = self.wait(LogicalTable.yz_loc)
@@ -120,21 +123,22 @@ class LogicalTable(BasePage):
         self.click(LogicalTable.cluster_loc)
 
         time.sleep(1)
-        self.wait(jq_loc)
+        self.wait_click(jq_loc)
         self.click(jq_loc)
 
-        self.wait(LogicalTable.logical_loc)
+        self.wait_click(LogicalTable.logical_loc)
         self.click(LogicalTable.logical_loc)
 
-        self.wait(logical_name_loc)
+        self.wait_click(logical_name_loc)
         self.click(logical_name_loc)
 
-        self.wait(LogicalTable.logical_table_loc)
+        self.wait_click(LogicalTable.logical_table_loc)
         self.click(LogicalTable.logical_table_loc)
 
-        self.wait(table_name_loc)
+        self.wait_click(table_name_loc)
         self.click(table_name_loc)
 
+        self.wait_click(LogicalTable.table_struct_button_loc)
         self.click(LogicalTable.table_struct_button_loc)
 
         return self.get_bx_value(LogicalTable.table_state_input_loc)
@@ -151,21 +155,22 @@ class LogicalTable(BasePage):
         self.click(LogicalTable.cluster_loc)
 
         time.sleep(1)
-        self.wait(jq_loc)
+        self.wait_click(jq_loc)
         self.click(jq_loc)
 
-        self.wait(LogicalTable.logical_loc)
+        self.wait_click(LogicalTable.logical_loc)
         self.click(LogicalTable.logical_loc)
 
-        self.wait(logical_name_loc)
+        self.wait_click(logical_name_loc)
         self.click(logical_name_loc)
 
-        self.wait(LogicalTable.logical_table_loc)
+        self.wait_click(LogicalTable.logical_table_loc)
         self.click(LogicalTable.logical_table_loc)
 
-        self.wait(table_name_loc)
+        self.wait_click(table_name_loc)
         self.click(table_name_loc)
 
+        self.wait_click(LogicalTable.table_dist_button_loc)
         self.click(LogicalTable.table_dist_button_loc)
 
         return self.get_value(database_table_loc)
@@ -182,31 +187,32 @@ class LogicalTable(BasePage):
         self.click(LogicalTable.cluster_loc)
 
         time.sleep(1)
-        self.wait(jq_loc)
+        self.wait_click(jq_loc)
         self.click(jq_loc)
 
-        self.wait(LogicalTable.logical_loc)
+        self.wait_click(LogicalTable.logical_loc)
         self.click(LogicalTable.logical_loc)
 
-        self.wait(logical_name_loc)
+        self.wait_click(logical_name_loc)
         self.click(logical_name_loc)
 
-        self.wait(LogicalTable.logical_table_loc)
+        self.wait_click(LogicalTable.logical_table_loc)
         self.click(LogicalTable.logical_table_loc)
 
         self.wait_click(LogicalTable.size_loc)
         self.click(LogicalTable.size_loc)
 
-        self.wait(LogicalTable.size_xz_loc)
+        self.wait_click(LogicalTable.size_xz_loc)
         self.click(LogicalTable.size_xz_loc)
 
         time.sleep(1)
 
         self.gd_loc(del_loc)
 
-        self.wait(del_loc)
+        self.wait_click(del_loc)
         self.click(del_loc)
 
+        self.wait_click(LogicalTable.qd_del_loc)
         self.click(LogicalTable.qd_del_loc)
 
         element = self.wait(LogicalTable.yz_loc)

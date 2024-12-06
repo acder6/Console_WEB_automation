@@ -37,25 +37,25 @@ class LogicalLog(BasePage):
         self.click(LogicalLog.cluster_loc)
 
         time.sleep(1)
-        self.wait(jq_loc)
+        self.wait_click(jq_loc)
         self.click(jq_loc)
 
-        self.wait(LogicalLog.logical_loc)
+        self.wait_click(LogicalLog.logical_loc)
         self.click(LogicalLog.logical_loc)
 
-        self.wait(logical_name_loc)
+        self.wait_click(logical_name_loc)
         self.click(logical_name_loc)
 
-        self.wait(LogicalLog.log_loc)
+        self.wait_click(LogicalLog.log_loc)
         self.click(LogicalLog.log_loc)
 
         self.wait_click(LogicalLog.sqltype_loc)
         self.click(LogicalLog.sqltype_loc)
 
-        self.wait(LogicalLog.drop_type_loc)
+        self.wait_click(LogicalLog.drop_type_loc)
         self.click(LogicalLog.drop_type_loc)
 
-        self.wait(LogicalLog.screnn_loc)
+        self.wait_click(LogicalLog.screnn_loc)
         self.click(LogicalLog.screnn_loc)
 
         time.sleep(1)
@@ -72,28 +72,28 @@ class LogicalLog(BasePage):
         self.click(LogicalLog.cluster_loc)
 
         time.sleep(1)
-        self.wait(jq_loc)
+        self.wait_click(jq_loc)
         self.click(jq_loc)
 
-        self.wait(LogicalLog.logical_loc)
+        self.wait_click(LogicalLog.logical_loc)
         self.click(LogicalLog.logical_loc)
 
-        self.wait(logical_name_loc)
+        self.wait_click(logical_name_loc)
         self.click(logical_name_loc)
 
-        self.wait(LogicalLog.log_loc)
+        self.wait_click(LogicalLog.log_loc)
         self.click(LogicalLog.log_loc)
 
         self.click(LogicalLog.sqltype_loc)
 
-        self.wait(LogicalLog.drop_type_loc)
+        self.wait_click(LogicalLog.drop_type_loc)
         self.click(LogicalLog.drop_type_loc)
 
-        self.wait(LogicalLog.screnn_loc)
+        self.wait_click(LogicalLog.screnn_loc)
         self.click(LogicalLog.screnn_loc)
 
         time.sleep(1)
-        self.wait(LogicalLog.derive_loc)
+        self.wait_click(LogicalLog.derive_loc)
         self.click(LogicalLog.derive_loc)
 
         time.sleep(1)

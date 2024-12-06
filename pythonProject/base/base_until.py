@@ -15,10 +15,10 @@ class BaseUntil(unittest.TestCase):
         # 设置 Chrome 测试版的路径
         option.binary_location = chrome_path
         # 初始化 WebDriver，指定 Chrome 测试版选项
-        option.add_argument('--headless')
+        # option.add_argument('--headless')
         # option.add_argument("--disable-gpu")  # 禁用GPU加速
-        option.add_argument("--window-size=1920,1080")  # 设置窗口大小
-        option.add_argument("--force-device-scale-factor=1")  # 设置设备缩放因子
+        # option.add_argument("--window-size=1920,1080")  # 设置窗口大小
+        # option.add_argument("--force-device-scale-factor=1")  # 设置设备缩放因子
         # 设置 webdriver.ChromeOptions 对象
         # 保持浏览器不关闭
         option.add_experimental_option("detach", True)
@@ -38,4 +38,5 @@ class BaseUntil(unittest.TestCase):
         self.driver.get("http://58.210.177.75:8088")
 
     def tearDown(self) -> None:
-        self.driver.quit()
+        # self.driver.quit()
+        pass

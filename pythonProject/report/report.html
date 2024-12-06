@@ -126,9 +126,9 @@ function html_escape(s) {
 <div class='heading'>
 <h1 style="font-family: Microsoft YaHei">Console自动化测试报告</h1>
 <p class='attribute'><strong>测试人员 : </strong> 杨杰</p>
-<p class='attribute'><strong>开始时间 : </strong> 2024-11-22 11:20:00</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:41:31.322631</p>
-<p class='attribute'><strong>测试结果 : </strong> 共 147，通过 123，失败 2，错误 22，通过率= 83.67%</p>
+<p class='attribute'><strong>开始时间 : </strong> 2024-12-06 09:26:45</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:28:31.518841</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 147，通过 141，失败 4，错误 2，通过率= 95.92%</p>
 
 <p class='description'>测试结果</p>
 </div>
@@ -136,9 +136,9 @@ function html_escape(s) {
 
 
 <p id='show_detail_line'>
-<a class="btn btn-primary" href='javascript:showCase(0)'>通过率 - 83.67% </a>
-<a class="btn btn-danger" href='javascript:showCase(1)'>失败 - 2 </a>
-<a class="btn btn-success" href='javascript:showCase(2)'>通过 - 123 </a>
+<a class="btn btn-primary" href='javascript:showCase(0)'>通过率 - 95.92% </a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败 - 4 </a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过 - 141 </a>
 <a class="btn btn-info" href='javascript:showCase(3)'>所有 - 147 </a>
 </p>
 <table id='result_table' class="table table-condensed table-bordered table-hover">
@@ -885,12 +885,12 @@ pt9_9: 注册 Oracle 集群成功
     <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr class='passClass warning'>
+<tr class='errorClass warning'>
     <td>配置日志: test_15_conf_log.TestConfLog</td>
     <td class="text-center">6</td>
-    <td class="text-center">6</td>
+    <td class="text-center">5</td>
     <td class="text-center">0</td>
-    <td class="text-center">0</td>
+    <td class="text-center">1</td>
     <td class="text-center"><a href="javascript:showClassDetail('c15',6)" class="detail" id='c15'>详细</a></td>
 </tr>
 
@@ -899,9 +899,57 @@ pt9_9: 注册 Oracle 集群成功
     <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='pt15_2' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>修改 PG 集群参数: test_02_xg_pg_parameter</div></td>
-    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+<tr id='ft15_2' class='none'>
+    <td class='errorCase'><div class='testcase'>修改 PG 集群参数: test_02_xg_pg_parameter</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 
+    <button id='btn_ft15_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft15_2'>错误</button>
+    <div id='div_ft15_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -->
+    <button id='btn_ft15_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft15_2'>错误</button>
+    <div id='div_ft15_2' class="collapse in">
+    <pre>
+    
+ft15_2: Traceback (most recent call last):
+  File "D:\Python\WEB_demo\pythonProject\testcase\test_15_conf_log.py", line 30, in test_02_xg_pg_parameter
+    xg.xg_parameter(TestConfLog.jq_pg_name, TestConfLog.parameter_1_name, TestConfLog.parameter_2_name,
+  File "D:\Python\WEB_demo\pythonProject\pageobject\conf_log_page.py", line 45, in xg_parameter
+    self.wait(jq_loc)
+  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
+    alert_element = WebDriverWait(self.driver, 20).until(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6AC0B9642+30946]
+	(No symbol) [0x00007FF6AC06E3D9]
+	(No symbol) [0x00007FF6ABF66FDA]
+	(No symbol) [0x00007FF6ABFB822C]
+	(No symbol) [0x00007FF6ABFB850C]
+	(No symbol) [0x00007FF6ABFFDCB7]
+	(No symbol) [0x00007FF6ABFDCAAF]
+	(No symbol) [0x00007FF6ABFFB041]
+	(No symbol) [0x00007FF6ABFDC813]
+	(No symbol) [0x00007FF6ABFAA6E5]
+	(No symbol) [0x00007FF6ABFAB021]
+	GetHandleVerifier [0x00007FF6AC1EF84D+1301229]
+	GetHandleVerifier [0x00007FF6AC1FBDC7+1351783]
+	GetHandleVerifier [0x00007FF6AC1F2A13+1313971]
+	GetHandleVerifier [0x00007FF6AC0EDD16+245686]
+	(No symbol) [0x00007FF6AC07759F]
+	(No symbol) [0x00007FF6AC073814]
+	(No symbol) [0x00007FF6AC0739A2]
+	(No symbol) [0x00007FF6AC06A3FF]
+	BaseThreadInitThunk [0x00007FF8F9A3259D+29]
+	RtlUserThreadStart [0x00007FF8FA54AF38+40]
+
+
+
+    </pre>
+    </div>
+    </td>
 </tr>
 
 <tr id='pt15_3' class='hiddenRow'>
@@ -927,237 +975,30 @@ pt9_9: 注册 Oracle 集群成功
 <tr class='errorClass warning'>
     <td>集群逻辑库: test_16_logical.TestLogical</td>
     <td class="text-center">18</td>
-    <td class="text-center">6</td>
+    <td class="text-center">15</td>
     <td class="text-center">2</td>
-    <td class="text-center">10</td>
+    <td class="text-center">1</td>
     <td class="text-center"><a href="javascript:showClassDetail('c16',18)" class="detail" id='c16'>详细</a></td>
 </tr>
 
-<tr id='ft16_1' class='none'>
-    <td class='errorCase'><div class='testcase'>添加 MySQL 集群逻辑库: test_01_add_logical_mysql</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft16_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft16_1'>错误</button>
-    <div id='div_ft16_1' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft16_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft16_1'>错误</button>
-    <div id='div_ft16_1' class="collapse in">
-    <pre>
-    
-ft16_1: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_16_logical.py", line 17, in test_01_add_logical_mysql
-    result = ad.add_cluster_logical(TestLogical.jq_m_name, TestLogical.logical_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\cluster_logical.py", line 53, in add_cluster_logical
-    self.click(ClusterLogical.qd_button_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 23, in click
-    self.locator_element(loc).click()
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 94, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
-    return self._parent.execute(command, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
-    self.error_handler.check_response(response)
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;button data-v-747a5e0d="" type="button" class="el-button el-button--primary"&gt;...&lt;/button&gt; is not clickable at point (1351, 713). Other element would receive the click: &lt;div data-v-1eec66b7="" class="el-transfer"&gt;...&lt;/div&gt;
-  (Session info: chrome-headless-shell=127.0.6533.119)
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261FEEE]
-	(No symbol) [0x00007FF60261D962]
-	(No symbol) [0x00007FF60261AE7B]
-	(No symbol) [0x00007FF60261A095]
-	(No symbol) [0x00007FF60260C271]
-	(No symbol) [0x00007FF60263CA6A]
-	(No symbol) [0x00007FF60260BBB6]
-	(No symbol) [0x00007FF60263CC80]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt16_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>添加 MySQL 集群逻辑库: test_01_add_logical_mysql</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='ft16_2' class='none'>
-    <td class='errorCase'><div class='testcase'>MySQL 集群逻辑库 添加节点: test_02_add_node_logical_mysql</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft16_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft16_2'>错误</button>
-    <div id='div_ft16_2' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft16_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft16_2'>错误</button>
-    <div id='div_ft16_2' class="collapse in">
-    <pre>
-    
-ft16_2: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_16_logical.py", line 23, in test_02_add_node_logical_mysql
-    result = ad_node.add_node_database(TestLogical.jq_m_name, TestLogical.logical_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\cluster_logical.py", line 77, in add_node_database
-    self.wait(logical_name_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt16_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>MySQL 集群逻辑库 添加节点: test_02_add_node_logical_mysql</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='ft16_3' class='none'>
-    <td class='errorCase'><div class='testcase'>MySQL 集群逻辑库 删除节点: test_03_del_node_logical_mysql</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft16_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft16_3'>错误</button>
-    <div id='div_ft16_3' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft16_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft16_3'>错误</button>
-    <div id='div_ft16_3' class="collapse in">
-    <pre>
-    
-ft16_3: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_16_logical.py", line 30, in test_03_del_node_logical_mysql
-    result = delt.del_node_database(TestLogical.jq_m_name, TestLogical.logical_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\cluster_logical.py", line 106, in del_node_database
-    self.wait(logical_name_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt16_3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>MySQL 集群逻辑库 删除节点: test_03_del_node_logical_mysql</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='ft16_4' class='none'>
-    <td class='errorCase'><div class='testcase'>删除 MySQL 集群逻辑库: test_04_del_logical_mysql</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft16_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft16_4'>错误</button>
-    <div id='div_ft16_4' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft16_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft16_4'>错误</button>
-    <div id='div_ft16_4' class="collapse in">
-    <pre>
-    
-ft16_4: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_16_logical.py", line 37, in test_04_del_logical_mysql
-    result = delt.del_cluster_logical(TestLogical.jq_m_name, TestLogical.logical_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\cluster_logical.py", line 137, in del_cluster_logical
-    self.wait(del_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt16_4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>删除 MySQL 集群逻辑库: test_04_del_logical_mysql</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
 <tr id='pt16_5' class='hiddenRow'>
@@ -1201,123 +1042,14 @@ AssertionError: '删除成功' != "服务器内部错误 - ERROR: You have an er
     </td>
 </tr>
 
-<tr id='ft16_9' class='none'>
-    <td class='errorCase'><div class='testcase'>添加 Oracle 集群逻辑库: test_09_add_logical_ora</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft16_9' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft16_9'>错误</button>
-    <div id='div_ft16_9' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft16_9' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft16_9'>错误</button>
-    <div id='div_ft16_9' class="collapse in">
-    <pre>
-    
-ft16_9: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_16_logical.py", line 73, in test_09_add_logical_ora
-    result = ad.add_cluster_logical(TestLogical.jq_ora_name, TestLogical.logical_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\cluster_logical.py", line 53, in add_cluster_logical
-    self.click(ClusterLogical.qd_button_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 23, in click
-    self.locator_element(loc).click()
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 94, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
-    return self._parent.execute(command, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
-    self.error_handler.check_response(response)
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;button data-v-747a5e0d="" type="button" class="el-button el-button--primary"&gt;...&lt;/button&gt; is not clickable at point (1351, 713). Other element would receive the click: &lt;div data-v-1eec66b7="" class="el-transfer"&gt;...&lt;/div&gt;
-  (Session info: chrome-headless-shell=127.0.6533.119)
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261FEEE]
-	(No symbol) [0x00007FF60261D962]
-	(No symbol) [0x00007FF60261AE7B]
-	(No symbol) [0x00007FF60261A095]
-	(No symbol) [0x00007FF60260C271]
-	(No symbol) [0x00007FF60263CA6A]
-	(No symbol) [0x00007FF60260BBB6]
-	(No symbol) [0x00007FF60263CC80]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt16_9' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>添加 Oracle 集群逻辑库: test_09_add_logical_ora</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='ft16_10' class='none'>
-    <td class='errorCase'><div class='testcase'>Oracle 集群逻辑库 添加节点: test_10_add_node_logical_ora</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft16_10' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft16_10'>错误</button>
-    <div id='div_ft16_10' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft16_10' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft16_10'>错误</button>
-    <div id='div_ft16_10' class="collapse in">
-    <pre>
-    
-ft16_10: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_16_logical.py", line 79, in test_10_add_node_logical_ora
-    result = ad_node.add_node_database(TestLogical.jq_ora_name, TestLogical.logical_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\cluster_logical.py", line 77, in add_node_database
-    self.wait(logical_name_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt16_10' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>Oracle 集群逻辑库 添加节点: test_10_add_node_logical_ora</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
 <tr id='ft16_11' class='none'>
@@ -1336,8 +1068,9 @@ ft16_11: Traceback (most recent call last):
   File "D:\Python\WEB_demo\pythonProject\testcase\test_16_logical.py", line 86, in test_11_del_node_logical_ora
     result = delt.del_node_database(TestLogical.jq_ora_name, TestLogical.logical_name)
              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\cluster_logical.py", line 106, in del_node_database
-    self.wait(logical_name_loc)
+  File "D:\Python\WEB_demo\pythonProject\pageobject\cluster_logical.py", line 116, in del_node_database
+    element = self.wait(ClusterLogical.yz_loc)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
     alert_element = WebDriverWait(self.driver, 20).until(
                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1345,27 +1078,27 @@ ft16_11: Traceback (most recent call last):
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
+	GetHandleVerifier [0x00007FF6AC0B9642+30946]
+	(No symbol) [0x00007FF6AC06E3D9]
+	(No symbol) [0x00007FF6ABF66FDA]
+	(No symbol) [0x00007FF6ABFB822C]
+	(No symbol) [0x00007FF6ABFB850C]
+	(No symbol) [0x00007FF6ABFFDCB7]
+	(No symbol) [0x00007FF6ABFDCAAF]
+	(No symbol) [0x00007FF6ABFFB041]
+	(No symbol) [0x00007FF6ABFDC813]
+	(No symbol) [0x00007FF6ABFAA6E5]
+	(No symbol) [0x00007FF6ABFAB021]
+	GetHandleVerifier [0x00007FF6AC1EF84D+1301229]
+	GetHandleVerifier [0x00007FF6AC1FBDC7+1351783]
+	GetHandleVerifier [0x00007FF6AC1F2A13+1313971]
+	GetHandleVerifier [0x00007FF6AC0EDD16+245686]
+	(No symbol) [0x00007FF6AC07759F]
+	(No symbol) [0x00007FF6AC073814]
+	(No symbol) [0x00007FF6AC0739A2]
+	(No symbol) [0x00007FF6AC06A3FF]
+	BaseThreadInitThunk [0x00007FF8F9A3259D+29]
+	RtlUserThreadStart [0x00007FF8FA54AF38+40]
 
 
 
@@ -1374,177 +1107,19 @@ Stacktrace:
     </td>
 </tr>
 
-<tr id='ft16_12' class='none'>
-    <td class='errorCase'><div class='testcase'>删除 Oracle 集群逻辑库: test_12_del_logical_ora</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft16_12' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft16_12'>错误</button>
-    <div id='div_ft16_12' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft16_12' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft16_12'>错误</button>
-    <div id='div_ft16_12' class="collapse in">
-    <pre>
-    
-ft16_12: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_16_logical.py", line 92, in test_12_del_logical_ora
-    result = delt.del_cluster_logical(TestLogical.jq_ora_name, TestLogical.logical_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\cluster_logical.py", line 137, in del_cluster_logical
-    self.wait(del_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt16_12' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>删除 Oracle 集群逻辑库: test_12_del_logical_ora</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='ft16_13' class='none'>
-    <td class='errorCase'><div class='testcase'>添加 MySQL 集群逻辑库: test_13_add_logical_mysql</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft16_13' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft16_13'>错误</button>
-    <div id='div_ft16_13' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft16_13' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft16_13'>错误</button>
-    <div id='div_ft16_13' class="collapse in">
-    <pre>
-    
-ft16_13: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_16_logical.py", line 98, in test_13_add_logical_mysql
-    result = ad.add_cluster_logical(TestLogical.jq_m_name, TestLogical.logical_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\cluster_logical.py", line 53, in add_cluster_logical
-    self.click(ClusterLogical.qd_button_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 23, in click
-    self.locator_element(loc).click()
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 94, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
-    return self._parent.execute(command, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
-    self.error_handler.check_response(response)
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;button data-v-747a5e0d="" type="button" class="el-button el-button--primary"&gt;...&lt;/button&gt; is not clickable at point (1351, 713). Other element would receive the click: &lt;div data-v-1eec66b7="" class="el-transfer"&gt;...&lt;/div&gt;
-  (Session info: chrome-headless-shell=127.0.6533.119)
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261FEEE]
-	(No symbol) [0x00007FF60261D962]
-	(No symbol) [0x00007FF60261AE7B]
-	(No symbol) [0x00007FF60261A095]
-	(No symbol) [0x00007FF60260C271]
-	(No symbol) [0x00007FF60263CA6A]
-	(No symbol) [0x00007FF60260BBB6]
-	(No symbol) [0x00007FF60263CC80]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt16_13' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>添加 MySQL 集群逻辑库: test_13_add_logical_mysql</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='ft16_14' class='none'>
-    <td class='errorCase'><div class='testcase'>MySQL 集群逻辑库 添加节点: test_14_add_node_logical_mysql</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft16_14' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft16_14'>错误</button>
-    <div id='div_ft16_14' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft16_14' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft16_14'>错误</button>
-    <div id='div_ft16_14' class="collapse in">
-    <pre>
-    
-ft16_14: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_16_logical.py", line 104, in test_14_add_node_logical_mysql
-    result = ad_node.add_node_database(TestLogical.jq_m_name, TestLogical.logical_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\cluster_logical.py", line 77, in add_node_database
-    self.wait(logical_name_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt16_14' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>MySQL 集群逻辑库 添加节点: test_14_add_node_logical_mysql</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
 <tr id='ft16_15' class='none'>
@@ -1588,62 +1163,43 @@ AssertionError: '新建逻辑库成功' != '数据已经存在 - Database test_0
     <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr class='errorClass warning'>
+<tr class='failClass warning'>
     <td>表: test_17_table.TestTable</td>
     <td class="text-center">15</td>
-    <td class="text-center">10</td>
+    <td class="text-center">13</td>
+    <td class="text-center">2</td>
     <td class="text-center">0</td>
-    <td class="text-center">5</td>
     <td class="text-center"><a href="javascript:showClassDetail('c17',15)" class="detail" id='c17'>详细</a></td>
 </tr>
 
-<tr id='ft17_1' class='none'>
-    <td class='errorCase'><div class='testcase'>MySQL 集群逻辑库 新建表: test_01_create_table_mysql</div></td>
+<tr id='pt17_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>MySQL 集群逻辑库 新建表: test_01_create_table_mysql</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='pt17_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>MySQL 集群逻辑库 修改表: test_02_xg_table_mysql</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='pt17_3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>MySQL 集群逻辑库 查看表结构: test_03_view_table_struct_mysql</div></td>
     <td colspan='5' align='center'>
     <!--默认收起错误信息 
-    <button id='btn_ft17_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft17_1'>错误</button>
-    <div id='div_ft17_1' class="collapse">  -->
+    <button id='btn_pt17_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt17_3'>通过</button>
+    <div id='div_pt17_3' class="collapse">  -->
 
     <!-- 默认展开错误信息 -->
-    <button id='btn_ft17_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft17_1'>错误</button>
-    <div id='div_ft17_1' class="collapse in">
+    <button id='btn_pt17_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt17_3'>通过</button>
+    <div id='div_pt17_3' class="collapse in">
     <pre>
     
-ft17_1: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_17_table.py", line 25, in test_01_create_table_mysql
-    result = cra.create_table(TestTable.jq_m_name, TestTable.logical_name, TestTable.table_state)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\logical_table.py", line 57, in create_table
-    self.wait(logical_name_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
+pt17_3: CREATE TABLE `student` (
+  `id` int NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `age` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 
     </pre>
@@ -1651,220 +1207,14 @@ Stacktrace:
     </td>
 </tr>
 
-<tr id='ft17_2' class='none'>
-    <td class='errorCase'><div class='testcase'>MySQL 集群逻辑库 修改表: test_02_xg_table_mysql</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft17_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft17_2'>错误</button>
-    <div id='div_ft17_2' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft17_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft17_2'>错误</button>
-    <div id='div_ft17_2' class="collapse in">
-    <pre>
-    
-ft17_2: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_17_table.py", line 31, in test_02_xg_table_mysql
-    result = xg.xg_table(TestTable.jq_m_name, TestTable.logical_name, TestTable.table_name, TestTable.table_xg_state)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\logical_table.py", line 92, in xg_table
-    self.wait(logical_name_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt17_4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>MySQL 集群逻辑库 查看表分布: test_04_view_table_dist_mysql</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='ft17_3' class='none'>
-    <td class='errorCase'><div class='testcase'>MySQL 集群逻辑库 查看表结构: test_03_view_table_struct_mysql</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft17_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft17_3'>错误</button>
-    <div id='div_ft17_3' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft17_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft17_3'>错误</button>
-    <div id='div_ft17_3' class="collapse in">
-    <pre>
-    
-ft17_3: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_17_table.py", line 38, in test_03_view_table_struct_mysql
-    result = vs.view_table_struct(TestTable.jq_m_name, TestTable.logical_name, TestTable.table_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\logical_table.py", line 123, in view_table_struct
-    self.wait(jq_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
-</tr>
-
-<tr id='ft17_4' class='none'>
-    <td class='errorCase'><div class='testcase'>MySQL 集群逻辑库 查看表分布: test_04_view_table_dist_mysql</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft17_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft17_4'>错误</button>
-    <div id='div_ft17_4' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft17_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft17_4'>错误</button>
-    <div id='div_ft17_4' class="collapse in">
-    <pre>
-    
-ft17_4: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_17_table.py", line 44, in test_04_view_table_dist_mysql
-    result = vd.view_table_dist(TestTable.jq_m_name, TestTable.logical_name, TestTable.table_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\logical_table.py", line 160, in view_table_dist
-    self.wait(logical_name_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
-</tr>
-
-<tr id='ft17_5' class='none'>
-    <td class='errorCase'><div class='testcase'>MySQL 集群逻辑库 删除表: test_05_delete_table_mysql</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft17_5' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft17_5'>错误</button>
-    <div id='div_ft17_5' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft17_5' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft17_5'>错误</button>
-    <div id='div_ft17_5' class="collapse in">
-    <pre>
-    
-ft17_5: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_17_table.py", line 50, in test_05_delete_table_mysql
-    result = de.delete_table(TestTable.jq_m_name, TestTable.logical_name, TestTable.table_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\logical_table.py", line 191, in delete_table
-    self.wait(logical_name_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt17_5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>MySQL 集群逻辑库 删除表: test_05_delete_table_mysql</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
 <tr id='pt17_6' class='hiddenRow'>
@@ -1907,14 +1257,56 @@ pt17_8: PostgreSQL does not support query create table sql
     <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='pt17_11' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>Oracle 集群逻辑库 新建表: test_11_create_table_ora</div></td>
-    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+<tr id='ft17_11' class='none'>
+    <td class='failCase'><div class='testcase'>Oracle 集群逻辑库 新建表: test_11_create_table_ora</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 
+    <button id='btn_ft17_11' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft17_11'>失败</button>
+    <div id='div_ft17_11' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -->
+    <button id='btn_ft17_11' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft17_11'>失败</button>
+    <div id='div_ft17_11' class="collapse in">
+    <pre>
+    
+ft17_11: Traceback (most recent call last):
+  File "D:\Python\WEB_demo\pythonProject\testcase\test_17_table.py", line 88, in test_11_create_table_ora
+    self.assertEqual("新建成功",result)
+AssertionError: '新建成功' != '数据已经存在 - Logic table exists or duplicates'
+- 新建成功
++ 数据已经存在 - Logic table exists or duplicates
+
+
+
+    </pre>
+    </div>
+    </td>
 </tr>
 
-<tr id='pt17_12' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>Oracle 集群逻辑库 修改表: test_12_xg_table_ora</div></td>
-    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+<tr id='ft17_12' class='none'>
+    <td class='failCase'><div class='testcase'>Oracle 集群逻辑库 修改表: test_12_xg_table_ora</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 
+    <button id='btn_ft17_12' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft17_12'>失败</button>
+    <div id='div_ft17_12' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -->
+    <button id='btn_ft17_12' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft17_12'>失败</button>
+    <div id='div_ft17_12' class="collapse in">
+    <pre>
+    
+ft17_12: Traceback (most recent call last):
+  File "D:\Python\WEB_demo\pythonProject\testcase\test_17_table.py", line 94, in test_12_xg_table_ora
+    self.assertEqual("修改成功",result)
+AssertionError: '修改成功' != '服务器内部错误 - ORA-01430: column being added already exists in table'
+- 修改成功
++ 服务器内部错误 - ORA-01430: column being added already exists in table
+
+
+
+    </pre>
+    </div>
+    </td>
 </tr>
 
 <tr id='pt17_13' class='hiddenRow'>
@@ -1935,7 +1327,7 @@ pt17_13:
 	"NAME" VARCHAR2(100), 
 	"AGE" NUMBER(*,0), 
 	 PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "SYSTEM"  ENABLE
@@ -1961,121 +1353,23 @@ pt17_13:
     <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr class='errorClass warning'>
+<tr class='passClass warning'>
     <td>逻辑库内慢日志: test_18_logical_log.TestLogicalLog</td>
     <td class="text-center">6</td>
-    <td class="text-center">3</td>
+    <td class="text-center">6</td>
     <td class="text-center">0</td>
-    <td class="text-center">3</td>
+    <td class="text-center">0</td>
     <td class="text-center"><a href="javascript:showClassDetail('c18',6)" class="detail" id='c18'>详细</a></td>
 </tr>
 
-<tr id='ft18_1' class='none'>
-    <td class='errorCase'><div class='testcase'>MySQL 集群逻辑库慢日志查看: test_01_view_logical_log_mysql</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft18_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft18_1'>错误</button>
-    <div id='div_ft18_1' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft18_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft18_1'>错误</button>
-    <div id='div_ft18_1' class="collapse in">
-    <pre>
-    
-ft18_1: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_18_logical_log.py", line 16, in test_01_view_logical_log_mysql
-    result = view.view_logical_log(TestLogicalLog.jq_m_name,TestLogicalLog.logical_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\logical_log.py", line 46, in view_logical_log
-    self.wait(logical_name_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt18_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>MySQL 集群逻辑库慢日志查看: test_01_view_logical_log_mysql</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='ft18_2' class='none'>
-    <td class='errorCase'><div class='testcase'>PG 集群逻辑库慢日志查看: test_02_view_logical_log_pg</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft18_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft18_2'>错误</button>
-    <div id='div_ft18_2' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft18_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft18_2'>错误</button>
-    <div id='div_ft18_2' class="collapse in">
-    <pre>
-    
-ft18_2: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_18_logical_log.py", line 22, in test_02_view_logical_log_pg
-    result = view.view_logical_log(TestLogicalLog.jq_pg_name,TestLogicalLog.logical_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\logical_log.py", line 40, in view_logical_log
-    self.wait(jq_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt18_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>PG 集群逻辑库慢日志查看: test_02_view_logical_log_pg</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
 <tr id='pt18_3' class='hiddenRow'>
@@ -2083,53 +1377,20 @@ Stacktrace:
     <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='ft18_4' class='none'>
-    <td class='errorCase'><div class='testcase'>MySQL 集群逻辑库导出慢日志: test_04_derive_logical_log_mysql</div></td>
+<tr id='pt18_4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>MySQL 集群逻辑库导出慢日志: test_04_derive_logical_log_mysql</div></td>
     <td colspan='5' align='center'>
     <!--默认收起错误信息 
-    <button id='btn_ft18_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft18_4'>错误</button>
-    <div id='div_ft18_4' class="collapse">  -->
+    <button id='btn_pt18_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt18_4'>通过</button>
+    <div id='div_pt18_4' class="collapse">  -->
 
     <!-- 默认展开错误信息 -->
-    <button id='btn_ft18_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft18_4'>错误</button>
-    <div id='div_ft18_4' class="collapse in">
+    <button id='btn_pt18_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt18_4'>通过</button>
+    <div id='div_pt18_4' class="collapse in">
     <pre>
     
-ft18_4: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_18_logical_log.py", line 34, in test_04_derive_logical_log_mysql
-    result = derive.derive_logical_log(TestLogicalLog.jq_m_name,TestLogicalLog.logical_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\logical_log.py", line 81, in derive_logical_log
-    self.wait(logical_name_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
+pt18_4: 文件下载成功: D:\test_downlode\slowSql.csv
+文件 slowSql.csv 已被删除。
 
 
     </pre>
@@ -2179,67 +1440,18 @@ pt18_6: 文件下载成功: D:\test_downlode\slowSql.csv
     </td>
 </tr>
 
-<tr class='errorClass warning'>
+<tr class='passClass warning'>
     <td>SQL 管理 慢日志: test_19_sql_management_log.TestsqlManagementLog</td>
     <td class="text-center">6</td>
-    <td class="text-center">4</td>
+    <td class="text-center">6</td>
     <td class="text-center">0</td>
-    <td class="text-center">2</td>
+    <td class="text-center">0</td>
     <td class="text-center"><a href="javascript:showClassDetail('c19',6)" class="detail" id='c19'>详细</a></td>
 </tr>
 
-<tr id='ft19_1' class='none'>
-    <td class='errorCase'><div class='testcase'>MySQL 集群逻辑库 查看慢日志: test_01_view_sql_management_log_mysql</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft19_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft19_1'>错误</button>
-    <div id='div_ft19_1' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft19_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft19_1'>错误</button>
-    <div id='div_ft19_1' class="collapse in">
-    <pre>
-    
-ft19_1: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_19_sql_management_log.py", line 18, in test_01_view_sql_management_log_mysql
-    result = view.view_log(TestsqlManagementLog.jq_m_name, TestsqlManagementLog.logical_name,TestsqlManagementLog.sql_type.upper())
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\sql_management_log.py", line 62, in view_log
-    self.wait_click(logical_name_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 32, in wait_click
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt19_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>MySQL 集群逻辑库 查看慢日志: test_01_view_sql_management_log_mysql</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
 <tr id='pt19_2' class='hiddenRow'>
@@ -2267,52 +1479,20 @@ pt19_3: test_ora已选中
     </td>
 </tr>
 
-<tr id='ft19_4' class='none'>
-    <td class='errorCase'><div class='testcase'>MySQL 集群逻辑库 导出慢日志: test_04_derive_sql_management_log_mysql</div></td>
+<tr id='pt19_4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>MySQL 集群逻辑库 导出慢日志: test_04_derive_sql_management_log_mysql</div></td>
     <td colspan='5' align='center'>
     <!--默认收起错误信息 
-    <button id='btn_ft19_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft19_4'>错误</button>
-    <div id='div_ft19_4' class="collapse">  -->
+    <button id='btn_pt19_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt19_4'>通过</button>
+    <div id='div_pt19_4' class="collapse">  -->
 
     <!-- 默认展开错误信息 -->
-    <button id='btn_ft19_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft19_4'>错误</button>
-    <div id='div_ft19_4' class="collapse in">
+    <button id='btn_pt19_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt19_4'>通过</button>
+    <div id='div_pt19_4' class="collapse in">
     <pre>
     
-ft19_4: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_19_sql_management_log.py", line 37, in test_04_derive_sql_management_log_mysql
-    derive.derive_log(TestsqlManagementLog.jq_m_name, TestsqlManagementLog.logical_name,TestsqlManagementLog.sql_type.upper())
-  File "D:\Python\WEB_demo\pythonProject\pageobject\sql_management_log.py", line 107, in derive_log
-    self.wait_click(logical_name_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 32, in wait_click
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
+pt19_4: 文件下载成功: D:\test_downlode\slowSql.csv
+文件 slowSql.csv 已被删除。
 
 
     </pre>
@@ -2363,64 +1543,28 @@ pt19_6: test_ora已选中
     </td>
 </tr>
 
-<tr class='errorClass warning'>
+<tr class='passClass warning'>
     <td>SQL 管理 路由: test_20_sql_management_routing.TestSqlManagementRouting</td>
     <td class="text-center">3</td>
-    <td class="text-center">2</td>
+    <td class="text-center">3</td>
     <td class="text-center">0</td>
-    <td class="text-center">1</td>
+    <td class="text-center">0</td>
     <td class="text-center"><a href="javascript:showClassDetail('c20',3)" class="detail" id='c20'>详细</a></td>
 </tr>
 
-<tr id='ft20_1' class='none'>
-    <td class='errorCase'><div class='testcase'>MySQL 集群逻辑库路由: test_01_sql_routing_mysql</div></td>
+<tr id='pt20_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>MySQL 集群逻辑库路由: test_01_sql_routing_mysql</div></td>
     <td colspan='5' align='center'>
     <!--默认收起错误信息 
-    <button id='btn_ft20_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft20_1'>错误</button>
-    <div id='div_ft20_1' class="collapse">  -->
+    <button id='btn_pt20_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt20_1'>通过</button>
+    <div id='div_pt20_1' class="collapse">  -->
 
     <!-- 默认展开错误信息 -->
-    <button id='btn_ft20_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft20_1'>错误</button>
-    <div id='div_ft20_1' class="collapse in">
+    <button id='btn_pt20_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt20_1'>通过</button>
+    <div id='div_pt20_1' class="collapse in">
     <pre>
     
-ft20_1: test_04已选中
-Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_20_sql_management_routing.py", line 20, in test_01_sql_routing_mysql
-    result = rou.sql_routing(TestSqlManagementRouting.jq_m_name, TestSqlManagementRouting.logical_name, TestSqlManagementRouting.sql_state.upper())
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\sql_management_routing.py", line 68, in sql_routing
-    element = self.wait(yz_routing_loc)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6FDA]
-	(No symbol) [0x00007FF60261822C]
-	(No symbol) [0x00007FF60261850C]
-	(No symbol) [0x00007FF60265DCB7]
-	(No symbol) [0x00007FF60263CAAF]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
+pt20_1: test_04已选中
 
 
     </pre>
@@ -2493,12 +1637,12 @@ test_04已选中
     <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr class='errorClass warning'>
+<tr class='passClass warning'>
     <td>规则组: test_22_rulegroup.TestRuleGroup</td>
     <td class="text-center">4</td>
-    <td class="text-center">3</td>
+    <td class="text-center">4</td>
     <td class="text-center">0</td>
-    <td class="text-center">1</td>
+    <td class="text-center">0</td>
     <td class="text-center"><a href="javascript:showClassDetail('c22',4)" class="detail" id='c22'>详细</a></td>
 </tr>
 
@@ -2517,66 +1661,9 @@ test_04已选中
     <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='ft22_4' class='none'>
-    <td class='errorCase'><div class='testcase'>删除规则组: test_04_del_rule_group</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft22_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft22_4'>错误</button>
-    <div id='div_ft22_4' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft22_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft22_4'>错误</button>
-    <div id='div_ft22_4' class="collapse in">
-    <pre>
-    
-ft22_4: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_22_rulegroup.py", line 37, in test_04_del_rule_group
-    result = de.del_rule(TestRuleGroup.del_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\rlue_group_page.py", line 129, in del_rule
-    self.click(RuleGroupPage.rule_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 23, in click
-    self.locator_element(loc).click()
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 94, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
-    return self._parent.execute(command, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
-    self.error_handler.check_response(response)
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome-headless-shell=127.0.6533.119)
-Stacktrace:
-	GetHandleVerifier [0x00007FF602719642+30946]
-	(No symbol) [0x00007FF6026CE3D9]
-	(No symbol) [0x00007FF6025C6E09]
-	(No symbol) [0x00007FF602619712]
-	(No symbol) [0x00007FF60260C271]
-	(No symbol) [0x00007FF60263CA6A]
-	(No symbol) [0x00007FF60260BBB6]
-	(No symbol) [0x00007FF60263CC80]
-	(No symbol) [0x00007FF60265B041]
-	(No symbol) [0x00007FF60263C813]
-	(No symbol) [0x00007FF60260A6E5]
-	(No symbol) [0x00007FF60260B021]
-	GetHandleVerifier [0x00007FF60284F84D+1301229]
-	GetHandleVerifier [0x00007FF60285BDC7+1351783]
-	GetHandleVerifier [0x00007FF602852A13+1313971]
-	GetHandleVerifier [0x00007FF60274DD16+245686]
-	(No symbol) [0x00007FF6026D759F]
-	(No symbol) [0x00007FF6026D3814]
-	(No symbol) [0x00007FF6026D39A2]
-	(No symbol) [0x00007FF6026CA3FF]
-	BaseThreadInitThunk [0x00007FFA993B259D+29]
-	RtlUserThreadStart [0x00007FFA9A0CAF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt22_4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>删除规则组: test_04_del_rule_group</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
 <tr class='passClass warning'>
@@ -2649,10 +1736,10 @@ Stacktrace:
 <tr id='total_row' class="text-center active">
     <td>总计</td>
     <td>147</td>
-    <td>123</td>
+    <td>141</td>
+    <td>4</td>
     <td>2</td>
-    <td>22</td>
-    <td>通过率：83.67%</td>
+    <td>通过率：95.92%</td>
 </tr>
 </table>
 
