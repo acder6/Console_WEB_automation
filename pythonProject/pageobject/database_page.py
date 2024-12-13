@@ -87,10 +87,10 @@ class DatabasePage(BasePage):
         # 端口
         self.set_keys(DatabasePage.port_loc,port)
         # 数据库类型
-        self.click(DatabasePage.type_box_loc)
+        # self.click(DatabasePage.type_box_loc)
         # 选择数据库类型
-        self.wait(DatabasePage.mysql_loc)
-        self.click(DatabasePage.mysql_loc)
+        # self.wait(DatabasePage.mysql_loc)
+        # self.click(DatabasePage.mysql_loc)
         # 用户名
         self.set_keys(DatabasePage.username_loc,username)
         # 密码
@@ -143,8 +143,7 @@ class DatabasePage(BasePage):
         self.click(DatabasePage.register_button_loc)
         try:
             # 等待注册成功
-            self.wait(DatabasePage.sussess_loc)
-            time.sleep(1)
+            self.wait_click(DatabasePage.sussess_loc)
             # 点击完成注册
 
             self.click(DatabasePage.sussess_loc)
@@ -188,8 +187,7 @@ class DatabasePage(BasePage):
         self.click(DatabasePage.register_button_loc)
         try:
             # 等待注册成功
-            self.wait(DatabasePage.sussess_loc)
-            time.sleep(1)
+            self.wait_click(DatabasePage.sussess_loc)
 
             # 点击完成注册
             self.click(DatabasePage.sussess_loc)
@@ -209,8 +207,8 @@ class DatabasePage(BasePage):
         # 点击数据库
         self.click(DatabasePage.database_loc)
         # 数据库探活
-        time.sleep(1)
         self.wait(th_loc_mysql)
+        self.wait_click(th_loc_mysql)
         self.click(th_loc_mysql)
 
         element = self.wait(DatabasePage.yz_loc)
@@ -231,7 +229,7 @@ class DatabasePage(BasePage):
         self.click(DatabasePage.database_loc)
 
         # 点击下拉框
-        time.sleep(1)
+        self.wait(xlk_loc)
         self.wait_click(xlk_loc)
         self.click(xlk_loc)
 
@@ -265,7 +263,7 @@ class DatabasePage(BasePage):
         self.click(DatabasePage.database_loc)
 
         # 点击下拉框
-        time.sleep(1)
+        self.wait(xlk_loc)
         self.wait_click(xlk_loc)
         self.click(xlk_loc)
 

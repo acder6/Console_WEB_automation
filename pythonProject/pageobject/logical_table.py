@@ -30,10 +30,14 @@ class LogicalTable(BasePage):
 
     yz_loc = (By.XPATH, '//div[@role="alert"]/p[@class="el-message__content"]')
 
+    #分页
     size_loc = (By.XPATH, '//span[@class="el-pagination__sizes"]')
 
     size_xz_loc = (By.XPATH,'//ul[@class="el-scrollbar__view el-select-dropdown__list"]//li[@class="el-select-dropdown__item" and .//span="100条/页"]')
 
+    #搜索
+    search_loc = (By.XPATH, '//input[@placeholder="请输入表名"]')
+    search_button_loc = (By.XPATH, '//div[@class="el-input-group__append"]/button[@class="el-button el-button--default"]')
     qd_del_loc = (By.XPATH, '//button[@class="el-button el-button--default el-button--small el-button--primary "] ')
 
 
@@ -47,7 +51,7 @@ class LogicalTable(BasePage):
 
         self.click(LogicalTable.cluster_loc)
 
-        time.sleep(1)
+        self.wait(jq_loc)
         self.wait_click(jq_loc)
         self.click(jq_loc)
 
@@ -84,7 +88,6 @@ class LogicalTable(BasePage):
 
         self.click(LogicalTable.cluster_loc)
 
-        time.sleep(1)
         self.wait_click(jq_loc)
         self.click(jq_loc)
 
@@ -122,7 +125,6 @@ class LogicalTable(BasePage):
 
         self.click(LogicalTable.cluster_loc)
 
-        time.sleep(1)
         self.wait_click(jq_loc)
         self.click(jq_loc)
 
@@ -154,7 +156,6 @@ class LogicalTable(BasePage):
 
         self.click(LogicalTable.cluster_loc)
 
-        time.sleep(1)
         self.wait_click(jq_loc)
         self.click(jq_loc)
 
@@ -186,7 +187,6 @@ class LogicalTable(BasePage):
 
         self.click(LogicalTable.cluster_loc)
 
-        time.sleep(1)
         self.wait_click(jq_loc)
         self.click(jq_loc)
 
@@ -199,16 +199,21 @@ class LogicalTable(BasePage):
         self.wait_click(LogicalTable.logical_table_loc)
         self.click(LogicalTable.logical_table_loc)
 
-        self.wait_click(LogicalTable.size_loc)
-        self.click(LogicalTable.size_loc)
+        self.wait(LogicalTable.search_loc)
+        self.set_keys(LogicalTable.search_loc, table_name)
 
-        self.wait_click(LogicalTable.size_xz_loc)
-        self.click(LogicalTable.size_xz_loc)
+        self.click(LogicalTable.search_button_loc)
+
+        # self.wait_click(LogicalTable.size_loc)
+        # self.click(LogicalTable.size_loc)
+        #
+        # self.wait_click(LogicalTable.size_xz_loc)
+        # self.click(LogicalTable.size_xz_loc)
+        #
+        #
+        # self.gd_loc(del_loc)
 
         time.sleep(1)
-
-        self.gd_loc(del_loc)
-
         self.wait_click(del_loc)
         self.click(del_loc)
 

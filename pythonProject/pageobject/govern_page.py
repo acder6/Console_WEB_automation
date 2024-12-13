@@ -22,7 +22,7 @@ class GovernPage(BasePage):
     register_loc = (By.XPATH, '//button[@class="el-button el-button--primary"]')
 
     # 治理中心类型
-    type_box_loc = (By.XPATH, '//input[@class="el-input__inner" and @readonly="readonly"]')
+    type_box_loc = (By.XPATH, '//div[@class="el-input el-input--suffix"]')
 
     # zookeeper
     zookeeper_loc = (By.XPATH,
@@ -97,7 +97,8 @@ class GovernPage(BasePage):
         # 点击治理中心
         self.click(GovernPage.govern_loc)
 
-        time.sleep(1)
+        self.wait(xlk_loc)
+        self.wait_click(xlk_loc)
         self.click(xlk_loc)
 
         self.wait_click(GovernPage.xg_loc)
@@ -126,13 +127,14 @@ class GovernPage(BasePage):
         # 点击治理中心
         self.click(GovernPage.govern_loc)
 
-        time.sleep(1)
+        self.wait(xlk_loc)
+        self.wait_click(xlk_loc)
         self.click(xlk_loc)
 
         self.wait_click(GovernPage.eith_node_loc)
         self.click(GovernPage.eith_node_loc)
 
-        time.sleep(1)
+        self.wait_click(GovernPage.th_loc)
         self.click(GovernPage.th_loc)
 
         element = self.wait(GovernPage.yz_loc)
@@ -153,7 +155,8 @@ class GovernPage(BasePage):
         # 点击治理中心
         self.click(GovernPage.govern_loc)
 
-        time.sleep(1)
+        self.wait(xlk_loc)
+        self.wait_click(xlk_loc)
         self.click(xlk_loc)
 
         self.wait_click(GovernPage.delete_loc)

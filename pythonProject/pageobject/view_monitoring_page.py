@@ -33,7 +33,7 @@ class ViewMonitoringPage(BasePage):
         self.wait_click(ViewMonitoringPage.cluster_loc)
         self.click(ViewMonitoringPage.cluster_loc)
 
-        time.sleep(1)
+        self.wait_click(jk_loc)
         self.click(jk_loc)
 
         result = self.get_value(ViewMonitoringPage.value_loc)
@@ -54,10 +54,9 @@ class ViewMonitoringPage(BasePage):
         self.wait_click(ViewMonitoringPage.host_loc)
         self.click(ViewMonitoringPage.host_loc)
 
-        time.sleep(1)
+        self.wait_click(jk_loc)
         self.click(jk_loc)
 
-        time.sleep(1)
         result = self.get_value(ViewMonitoringPage.value_loc)
 
         return result != ''
@@ -75,7 +74,7 @@ class ViewMonitoringPage(BasePage):
 
         self.click(ViewMonitoringPage.database_loc)
 
-        time.sleep(1)
+        self.wait_click(jk_loc)
         self.click(jk_loc)
 
         result = self.get_value(ViewMonitoringPage.value_loc)
@@ -95,10 +94,10 @@ class ViewMonitoringPage(BasePage):
 
         self.click(ViewMonitoringPage.monitoring_view_loc)
 
-        time.sleep(1)
+        self.wait_click(jk_loc)
         self.click(jk_loc)
 
-        time.sleep(1)
+
         self.wait(ViewMonitoringPage.value_loc)
         result = self.get_value(ViewMonitoringPage.value_loc)
 

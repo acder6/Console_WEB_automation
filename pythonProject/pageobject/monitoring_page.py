@@ -73,7 +73,7 @@ class MonitoringPage(BasePage):
         # 点击监控中心
         self.click(MonitoringPage.monitoring_loc)
 
-        time.sleep(1)
+
         self.wait_click(th_monitoring_loc)
         self.click(th_monitoring_loc)
 
@@ -95,7 +95,7 @@ class MonitoringPage(BasePage):
         # 点击监控中心
         self.click(MonitoringPage.monitoring_loc)
 
-        time.sleep(1)
+
         self.wait_click(xg_monitoring_loc)
         self.click(xg_monitoring_loc)
 
@@ -121,7 +121,7 @@ class MonitoringPage(BasePage):
         # 点击监控中心
         self.click(MonitoringPage.monitoring_loc)
 
-        time.sleep(1)
+
         self.wait_click(delete_monitoring_loc)
         self.click(delete_monitoring_loc)
 

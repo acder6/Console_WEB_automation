@@ -26,8 +26,7 @@ class ParameterPage(BasePage):
 
         self.click(ParameterPage.cluster_loc)
 
-        time.sleep(1)
-        self.wait(jq_loc)
+        self.wait_click(jq_loc)
         self.click(jq_loc)
 
         self.click(ParameterPage.cluster_parameter_loc)
@@ -39,7 +38,7 @@ class ParameterPage(BasePage):
 
         self.click(ParameterPage.qd_button_loc)
 
-        time.sleep(2)
+        time.sleep(1)
         element = self.wait(para_yz_loc)
         if element:
             return self.get_value(para_yz_loc)
@@ -55,8 +54,7 @@ class ParameterPage(BasePage):
 
         self.click(ParameterPage.cluster_loc)
 
-        time.sleep(1)
-        self.wait(jq_loc)
+        self.wait_click(jq_loc)
         self.click(jq_loc)
 
         self.click(ParameterPage.cluster_parameter_loc)
@@ -66,7 +64,7 @@ class ParameterPage(BasePage):
 
         self.click(ParameterPage.qd_button_loc)
 
-        time.sleep(2)
+        time.sleep(1)
         result_mr = self.get_value(mr_para_yz_loc)
         result_yz = self.get_value(para_yz_loc)
         return result_mr == result_yz

@@ -126,9 +126,9 @@ function html_escape(s) {
 <div class='heading'>
 <h1 style="font-family: Microsoft YaHei">Console自动化测试报告</h1>
 <p class='attribute'><strong>测试人员 : </strong> 杨杰</p>
-<p class='attribute'><strong>开始时间 : </strong> 2024-12-06 09:26:45</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:28:31.518841</p>
-<p class='attribute'><strong>测试结果 : </strong> 共 147，通过 141，失败 4，错误 2，通过率= 95.92%</p>
+<p class='attribute'><strong>开始时间 : </strong> 2024-12-12 17:54:45</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:32:07.269854</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 147，通过 144，失败 3，通过率= 97.96%</p>
 
 <p class='description'>测试结果</p>
 </div>
@@ -136,9 +136,9 @@ function html_escape(s) {
 
 
 <p id='show_detail_line'>
-<a class="btn btn-primary" href='javascript:showCase(0)'>通过率 - 95.92% </a>
-<a class="btn btn-danger" href='javascript:showCase(1)'>失败 - 4 </a>
-<a class="btn btn-success" href='javascript:showCase(2)'>通过 - 141 </a>
+<a class="btn btn-primary" href='javascript:showCase(0)'>通过率 - 97.96% </a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败 - 3 </a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过 - 144 </a>
 <a class="btn btn-info" href='javascript:showCase(3)'>所有 - 147 </a>
 </p>
 <table id='result_table' class="table table-condensed table-bordered table-hover">
@@ -194,7 +194,7 @@ function html_escape(s) {
     <div id='div_pt2_1' class="collapse in">
     <pre>
     
-pt2_1: 注册主机成功
+pt2_1: 注册主机失败
 
 
     </pre>
@@ -885,12 +885,12 @@ pt9_9: 注册 Oracle 集群成功
     <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr class='errorClass warning'>
+<tr class='passClass warning'>
     <td>配置日志: test_15_conf_log.TestConfLog</td>
     <td class="text-center">6</td>
-    <td class="text-center">5</td>
+    <td class="text-center">6</td>
     <td class="text-center">0</td>
-    <td class="text-center">1</td>
+    <td class="text-center">0</td>
     <td class="text-center"><a href="javascript:showClassDetail('c15',6)" class="detail" id='c15'>详细</a></td>
 </tr>
 
@@ -899,57 +899,9 @@ pt9_9: 注册 Oracle 集群成功
     <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='ft15_2' class='none'>
-    <td class='errorCase'><div class='testcase'>修改 PG 集群参数: test_02_xg_pg_parameter</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft15_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft15_2'>错误</button>
-    <div id='div_ft15_2' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft15_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft15_2'>错误</button>
-    <div id='div_ft15_2' class="collapse in">
-    <pre>
-    
-ft15_2: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_15_conf_log.py", line 30, in test_02_xg_pg_parameter
-    xg.xg_parameter(TestConfLog.jq_pg_name, TestConfLog.parameter_1_name, TestConfLog.parameter_2_name,
-  File "D:\Python\WEB_demo\pythonProject\pageobject\conf_log_page.py", line 45, in xg_parameter
-    self.wait(jq_loc)
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF6AC0B9642+30946]
-	(No symbol) [0x00007FF6AC06E3D9]
-	(No symbol) [0x00007FF6ABF66FDA]
-	(No symbol) [0x00007FF6ABFB822C]
-	(No symbol) [0x00007FF6ABFB850C]
-	(No symbol) [0x00007FF6ABFFDCB7]
-	(No symbol) [0x00007FF6ABFDCAAF]
-	(No symbol) [0x00007FF6ABFFB041]
-	(No symbol) [0x00007FF6ABFDC813]
-	(No symbol) [0x00007FF6ABFAA6E5]
-	(No symbol) [0x00007FF6ABFAB021]
-	GetHandleVerifier [0x00007FF6AC1EF84D+1301229]
-	GetHandleVerifier [0x00007FF6AC1FBDC7+1351783]
-	GetHandleVerifier [0x00007FF6AC1F2A13+1313971]
-	GetHandleVerifier [0x00007FF6AC0EDD16+245686]
-	(No symbol) [0x00007FF6AC07759F]
-	(No symbol) [0x00007FF6AC073814]
-	(No symbol) [0x00007FF6AC0739A2]
-	(No symbol) [0x00007FF6AC06A3FF]
-	BaseThreadInitThunk [0x00007FF8F9A3259D+29]
-	RtlUserThreadStart [0x00007FF8FA54AF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt15_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>修改 PG 集群参数: test_02_xg_pg_parameter</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
 <tr id='pt15_3' class='hiddenRow'>
@@ -972,12 +924,12 @@ Stacktrace:
     <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr class='errorClass warning'>
+<tr class='failClass warning'>
     <td>集群逻辑库: test_16_logical.TestLogical</td>
     <td class="text-center">18</td>
-    <td class="text-center">15</td>
+    <td class="text-center">16</td>
     <td class="text-center">2</td>
-    <td class="text-center">1</td>
+    <td class="text-center">0</td>
     <td class="text-center"><a href="javascript:showClassDetail('c16',18)" class="detail" id='c16'>详细</a></td>
 </tr>
 
@@ -1052,59 +1004,9 @@ AssertionError: '删除成功' != "服务器内部错误 - ERROR: You have an er
     <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='ft16_11' class='none'>
-    <td class='errorCase'><div class='testcase'>Oracle 集群逻辑库 删除节点: test_11_del_node_logical_ora</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft16_11' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft16_11'>错误</button>
-    <div id='div_ft16_11' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft16_11' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft16_11'>错误</button>
-    <div id='div_ft16_11' class="collapse in">
-    <pre>
-    
-ft16_11: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_16_logical.py", line 86, in test_11_del_node_logical_ora
-    result = delt.del_node_database(TestLogical.jq_ora_name, TestLogical.logical_name)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\pageobject\cluster_logical.py", line 116, in del_node_database
-    element = self.wait(ClusterLogical.yz_loc)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\base\base_page.py", line 26, in wait
-    alert_element = WebDriverWait(self.driver, 20).until(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Python\WEB_demo\pythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00007FF6AC0B9642+30946]
-	(No symbol) [0x00007FF6AC06E3D9]
-	(No symbol) [0x00007FF6ABF66FDA]
-	(No symbol) [0x00007FF6ABFB822C]
-	(No symbol) [0x00007FF6ABFB850C]
-	(No symbol) [0x00007FF6ABFFDCB7]
-	(No symbol) [0x00007FF6ABFDCAAF]
-	(No symbol) [0x00007FF6ABFFB041]
-	(No symbol) [0x00007FF6ABFDC813]
-	(No symbol) [0x00007FF6ABFAA6E5]
-	(No symbol) [0x00007FF6ABFAB021]
-	GetHandleVerifier [0x00007FF6AC1EF84D+1301229]
-	GetHandleVerifier [0x00007FF6AC1FBDC7+1351783]
-	GetHandleVerifier [0x00007FF6AC1F2A13+1313971]
-	GetHandleVerifier [0x00007FF6AC0EDD16+245686]
-	(No symbol) [0x00007FF6AC07759F]
-	(No symbol) [0x00007FF6AC073814]
-	(No symbol) [0x00007FF6AC0739A2]
-	(No symbol) [0x00007FF6AC06A3FF]
-	BaseThreadInitThunk [0x00007FF8F9A3259D+29]
-	RtlUserThreadStart [0x00007FF8FA54AF38+40]
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt16_11' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>Oracle 集群逻辑库 删除节点: test_11_del_node_logical_ora</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
 <tr id='pt16_12' class='hiddenRow'>
@@ -1163,11 +1065,11 @@ AssertionError: '新建逻辑库成功' != '数据已经存在 - Database test_0
     <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr class='failClass warning'>
+<tr class='passClass warning'>
     <td>表: test_17_table.TestTable</td>
     <td class="text-center">15</td>
-    <td class="text-center">13</td>
-    <td class="text-center">2</td>
+    <td class="text-center">15</td>
+    <td class="text-center">0</td>
     <td class="text-center">0</td>
     <td class="text-center"><a href="javascript:showClassDetail('c17',15)" class="detail" id='c17'>详细</a></td>
 </tr>
@@ -1257,56 +1159,14 @@ pt17_8: PostgreSQL does not support query create table sql
     <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='ft17_11' class='none'>
-    <td class='failCase'><div class='testcase'>Oracle 集群逻辑库 新建表: test_11_create_table_ora</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft17_11' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft17_11'>失败</button>
-    <div id='div_ft17_11' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft17_11' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft17_11'>失败</button>
-    <div id='div_ft17_11' class="collapse in">
-    <pre>
-    
-ft17_11: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_17_table.py", line 88, in test_11_create_table_ora
-    self.assertEqual("新建成功",result)
-AssertionError: '新建成功' != '数据已经存在 - Logic table exists or duplicates'
-- 新建成功
-+ 数据已经存在 - Logic table exists or duplicates
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt17_11' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>Oracle 集群逻辑库 新建表: test_11_create_table_ora</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr id='ft17_12' class='none'>
-    <td class='failCase'><div class='testcase'>Oracle 集群逻辑库 修改表: test_12_xg_table_ora</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 
-    <button id='btn_ft17_12' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft17_12'>失败</button>
-    <div id='div_ft17_12' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -->
-    <button id='btn_ft17_12' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft17_12'>失败</button>
-    <div id='div_ft17_12' class="collapse in">
-    <pre>
-    
-ft17_12: Traceback (most recent call last):
-  File "D:\Python\WEB_demo\pythonProject\testcase\test_17_table.py", line 94, in test_12_xg_table_ora
-    self.assertEqual("修改成功",result)
-AssertionError: '修改成功' != '服务器内部错误 - ORA-01430: column being added already exists in table'
-- 修改成功
-+ 服务器内部错误 - ORA-01430: column being added already exists in table
-
-
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt17_12' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>Oracle 集群逻辑库 修改表: test_12_xg_table_ora</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
 <tr id='pt17_13' class='hiddenRow'>
@@ -1327,7 +1187,7 @@ pt17_13:
 	"NAME" VARCHAR2(100), 
 	"AGE" NUMBER(*,0), 
 	 PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "SYSTEM"  ENABLE
@@ -1714,18 +1574,36 @@ test_04已选中
     <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
-<tr class='passClass warning'>
+<tr class='failClass warning'>
     <td>加密衍生列后缀: test_25_jm_suff.TestJmSuff</td>
     <td class="text-center">2</td>
-    <td class="text-center">2</td>
-    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
     <td class="text-center">0</td>
     <td class="text-center"><a href="javascript:showClassDetail('c25',2)" class="detail" id='c25'>详细</a></td>
 </tr>
 
-<tr id='pt25_1' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>更改后缀: test_01_xg_jm_column_suff</div></td>
-    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+<tr id='ft25_1' class='none'>
+    <td class='failCase'><div class='testcase'>更改后缀: test_01_xg_jm_column_suff</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 
+    <button id='btn_ft25_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft25_1'>失败</button>
+    <div id='div_ft25_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -->
+    <button id='btn_ft25_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft25_1'>失败</button>
+    <div id='div_ft25_1' class="collapse in">
+    <pre>
+    
+ft25_1: Traceback (most recent call last):
+  File "D:\Python\WEB_demo\pythonProject\testcase\test_25_jm_suff.py", line 18, in test_01_xg_jm_column_suff
+    self.assertTrue(result)
+AssertionError: False is not true
+
+
+    </pre>
+    </div>
+    </td>
 </tr>
 
 <tr id='pt25_2' class='hiddenRow'>
@@ -1736,10 +1614,10 @@ test_04已选中
 <tr id='total_row' class="text-center active">
     <td>总计</td>
     <td>147</td>
-    <td>141</td>
-    <td>4</td>
-    <td>2</td>
-    <td>通过率：95.92%</td>
+    <td>144</td>
+    <td>3</td>
+    <td>0</td>
+    <td>通过率：97.96%</td>
 </tr>
 </table>
 

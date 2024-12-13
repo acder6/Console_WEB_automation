@@ -74,7 +74,7 @@ class LogPage(BasePage):
 
         self.click(eith_node_log_loc)
 
-        time.sleep(2)
+        self.wait_click(LogPage.th_loc)
         self.click(LogPage.th_loc)
 
         element = self.wait(LogPage.yz_loc)
@@ -95,7 +95,7 @@ class LogPage(BasePage):
         # 点击日志中心
         self.click(LogPage.log_loc)
 
-        time.sleep(1)
+
         self.wait_click(xg_log_loc)
         self.click(xg_log_loc)
 
@@ -123,7 +123,7 @@ class LogPage(BasePage):
         # 点击日志中心
         self.click(LogPage.log_loc)
 
-        time.sleep(1)
+
         self.wait_click(delete_monitoring_loc)
         self.click(delete_monitoring_loc)
 

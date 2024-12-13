@@ -31,28 +31,32 @@ class JmColumnSuff(BasePage):
 
         self.click(JmColumnSuff.sen_data_loc)
 
+        self.wait_click(JmColumnSuff.jmsuff_loc)
         self.click(JmColumnSuff.jmsuff_loc)
 
+        self.wait(JmColumnSuff.mw_loc)
         self.clear(JmColumnSuff.mw_loc)
         self.set_keys(JmColumnSuff.mw_loc,mw)
 
+        self.wait(JmColumnSuff.like_loc)
         self.clear(JmColumnSuff.like_loc)
         self.set_keys(JmColumnSuff.like_loc,like)
 
+
+        self.wait(JmColumnSuff.order_loc)
         self.clear(JmColumnSuff.order_loc)
         self.set_keys(JmColumnSuff.order_loc,order)
 
+        self.wait_click(JmColumnSuff.qr_button_loc)
         self.click(JmColumnSuff.qr_button_loc)
 
         self.sx()
 
         time.sleep(1)
-        element = self.wait(JmColumnSuff.mw_loc)
-        if element:
-            mw_result = self.get_bx_value(JmColumnSuff.mw_loc)
-            like_result = self.get_bx_value(JmColumnSuff.like_loc)
-            order_result = self.get_bx_value(JmColumnSuff.order_loc)
-            return mw_result == mw and like_result == like and order_result == order
+        mw_result = self.get_bx_value(JmColumnSuff.mw_loc)
+        like_result = self.get_bx_value(JmColumnSuff.like_loc)
+        order_result = self.get_bx_value(JmColumnSuff.order_loc)
+        return mw_result == mw and like_result == like and order_result == order
 
     def mr_jm_column_suff(self):
         # 登录
@@ -61,6 +65,7 @@ class JmColumnSuff(BasePage):
 
         self.click(JmColumnSuff.sen_data_loc)
 
+        self.wait_click(JmColumnSuff.jmsuff_loc)
         self.click(JmColumnSuff.jmsuff_loc)
 
         self.click(JmColumnSuff.mr_button_loc)

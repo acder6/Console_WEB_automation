@@ -36,7 +36,7 @@ class LogicalLog(BasePage):
 
         self.click(LogicalLog.cluster_loc)
 
-        time.sleep(1)
+        self.wait(jq_loc)
         self.wait_click(jq_loc)
         self.click(jq_loc)
 
@@ -71,7 +71,7 @@ class LogicalLog(BasePage):
 
         self.click(LogicalLog.cluster_loc)
 
-        time.sleep(1)
+        self.wait(jq_loc)
         self.wait_click(jq_loc)
         self.click(jq_loc)
 
@@ -92,7 +92,7 @@ class LogicalLog(BasePage):
         self.wait_click(LogicalLog.screnn_loc)
         self.click(LogicalLog.screnn_loc)
 
-        time.sleep(1)
+        self.wait(LogicalLog.derive_loc)
         self.wait_click(LogicalLog.derive_loc)
         self.click(LogicalLog.derive_loc)
 

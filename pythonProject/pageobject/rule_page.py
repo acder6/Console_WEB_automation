@@ -62,7 +62,7 @@ class RulePage(BasePage):
 
         self.click(RulePage.rule_loc)
 
-        time.sleep(1)
+        self.wait(either_loc)
         self.wait_click(either_loc)
         self.click(either_loc)
 
@@ -95,7 +95,7 @@ class RulePage(BasePage):
 
         self.click(RulePage.rule_loc)
 
-        time.sleep(1)
+        self.wait(del_loc)
         self.wait_click(del_loc)
         self.click(del_loc)
 
