@@ -34,7 +34,7 @@ class HostPage(BasePage):
     # 主机名称端口号
     host_name_loc = (By.XPATH, '//label[@for="hostName"]//following-sibling::div//input[@class="el-input__inner"]')
 
-    # 注册主机按钮
+    # 注册数据库按钮
     register_button_loc = (By.XPATH, '//button[@class="el-button el-button--primary"]')
 
     # 完成注册
@@ -59,7 +59,6 @@ class HostPage(BasePage):
         # 点击资源管理
         self.click(HostPage.resource_loc)
         # 点击主机
-        self.wait_click(HostPage.host_loc)
         self.click(HostPage.host_loc)
         # 点击注册主机
         self.click(HostPage.register_loc)
@@ -73,12 +72,13 @@ class HostPage(BasePage):
         self.set_keys(HostPage.password_loc, password)
         # 端口
         self.set_keys(HostPage.port_loc, port)
-        # 注册主机
+        # 注册数据库
         self.click(HostPage.register_button_loc)
         try:
             # 等待注册成功
-            self.wait_click(HostPage.sussess_loc)
+            self.wait(HostPage.sussess_loc)
             time.sleep(1)
+
             # 点击完成注册
             self.click(HostPage.sussess_loc)
             print("注册主机成功")
@@ -102,7 +102,7 @@ class HostPage(BasePage):
         self.click(HostPage.host_loc)
 
         # 点击下拉框
-        self.wait(xlk_loc)
+        time.sleep(1)
         self.wait_click(xlk_loc)
         self.click(xlk_loc)
 
@@ -135,7 +135,7 @@ class HostPage(BasePage):
         self.click(HostPage.host_loc)
 
         # 点击下拉框
-        self.wait(xlk_loc)
+        time.sleep(1)
         self.wait_click(xlk_loc)
         self.click(xlk_loc)
 

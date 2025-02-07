@@ -71,8 +71,8 @@ class ClusterPage(BasePage):
 
         try:
             # 等待注册成功
-            self.wait_click(ClusterPage.sussess_loc)
-
+            self.wait(ClusterPage.sussess_loc)
+            time.sleep(1)
             # 点击完成注册
             self.click(ClusterPage.sussess_loc)
             print("注册 MySQL 集群成功")
@@ -106,8 +106,8 @@ class ClusterPage(BasePage):
 
         try:
             # 等待注册成功
-            self.wait_click(ClusterPage.sussess_loc)
-
+            self.wait(ClusterPage.sussess_loc)
+            time.sleep(1)
             # 点击完成注册
             self.click(ClusterPage.sussess_loc)
             print("注册 PostgreSQL 集群成功")
@@ -136,8 +136,8 @@ class ClusterPage(BasePage):
 
         try:
             # 等待注册成功
-            self.wait_click(ClusterPage.sussess_loc)
-
+            self.wait(ClusterPage.sussess_loc)
+            time.sleep(1)
             # 点击完成注册
             self.click(ClusterPage.sussess_loc)
             print("注册 Oracle 集群成功")
@@ -152,7 +152,7 @@ class ClusterPage(BasePage):
 
         self.click(ClusterPage.cluster_loc)
 
-
+        time.sleep(1)
         self.wait_click(jq_loc)
         self.click(jq_loc)
 
@@ -163,7 +163,7 @@ class ClusterPage(BasePage):
         self.set_keys(ClusterPage.mx_loc,mx)
         self.click(ClusterPage.register_button_loc)
 
-        time.sleep(1)
+        time.sleep(2)
 
         element = self.wait(ClusterPage.yz_loc)
         if element:
@@ -178,14 +178,15 @@ class ClusterPage(BasePage):
 
         self.click(ClusterPage.cluster_loc)
 
+        time.sleep(1)
 
-
-        self.wait_click(del_loc)
+        self.wait(del_loc)
         self.click(del_loc)
 
         self.wait(ClusterPage.qr_loc)
         self.click(ClusterPage.qr_loc)
 
+        time.sleep(2)
 
         element = self.wait(ClusterPage.yz_d_loc)
         if element:

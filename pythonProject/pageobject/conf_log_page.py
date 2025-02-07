@@ -41,7 +41,8 @@ class ConfLogPage(BasePage):
 
         self.click(ConfLogPage.cluster_loc)
 
-        self.wait_click(jq_loc)
+        time.sleep(1)
+        self.wait(jq_loc)
         self.click(jq_loc)
 
         self.click(ConfLogPage.cluster_parameter_loc)
@@ -53,7 +54,8 @@ class ConfLogPage(BasePage):
 
         self.click(ConfLogPage.qd_button_loc)
 
-        self.wait_click(xg_2_loc_para)
+        time.sleep(2)
+        self.wait(xg_2_loc_para)
         self.click(xg_2_loc_para)
 
         self.set_keys(ConfLogPage.value_loc, value_2)
@@ -71,7 +73,8 @@ class ConfLogPage(BasePage):
 
         self.click(ConfLogPage.cluster_loc)
 
-        self.wait_click(jq_loc)
+        time.sleep(1)
+        self.wait(jq_loc)
         self.click(jq_loc)
 
         self.click(ConfLogPage.cluster_log_loc)

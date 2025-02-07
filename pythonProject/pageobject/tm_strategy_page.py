@@ -41,8 +41,6 @@ class TmStrategyPage(BasePage):
 
         self.set_keys(TmStrategyPage.name_loc,name)
 
-        self.wait(TmStrategyPage.type_loc)
-        self.wait_click(TmStrategyPage.type_loc)
         self.click(TmStrategyPage.type_loc)
 
         self.click(TmStrategyPage.type_xz_loc)
@@ -70,7 +68,7 @@ class TmStrategyPage(BasePage):
 
         self.click(TmStrategyPage.tm_loc)
 
-        self.wait(either_loc)
+        time.sleep(1)
         self.wait_click(either_loc)
         self.click(either_loc)
 
@@ -99,7 +97,7 @@ class TmStrategyPage(BasePage):
 
         self.click(TmStrategyPage.tm_loc)
 
-        self.wait(del_loc)
+        time.sleep(1)
         self.wait_click(del_loc)
         self.click(del_loc)
 

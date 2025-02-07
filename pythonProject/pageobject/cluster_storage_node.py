@@ -46,11 +46,12 @@ class ClusterStorageNode(BasePage):
 
        self.click(ClusterStorageNode.cluster_loc)
 
-       self.wait_click(jq_loc)
+       time.sleep(1)
+       self.wait(jq_loc)
        self.click(jq_loc)
 
 
-       self.wait_click(ClusterStorageNode.cluster_storage_node_loc)
+       time.sleep(1)
        self.click(ClusterStorageNode.cluster_storage_node_loc)
 
 
@@ -89,11 +90,11 @@ class ClusterStorageNode(BasePage):
 
        self.click(ClusterStorageNode.cluster_loc)
 
-       self.wait_click(jq_loc)
+       time.sleep(1)
+       self.wait(jq_loc)
        self.click(jq_loc)
 
 
-       self.wait_click(ClusterStorageNode.cluster_storage_node_loc)
        self.click(ClusterStorageNode.cluster_storage_node_loc)
 
 
@@ -124,10 +125,11 @@ class ClusterStorageNode(BasePage):
 
        self.click(ClusterStorageNode.cluster_loc)
 
-       self.wait_click(jq_loc)
+       time.sleep(1)
+       self.wait(jq_loc)
        self.click(jq_loc)
 
-       self.wait_click(ClusterStorageNode.cluster_storage_node_loc)
+
        self.click(ClusterStorageNode.cluster_storage_node_loc)
 
 
@@ -158,13 +160,15 @@ class ClusterStorageNode(BasePage):
 
         self.click(ClusterStorageNode.cluster_loc)
 
-        self.wait_click(jq_loc)
+        time.sleep(1)
+        self.wait(jq_loc)
         self.click(jq_loc)
 
         self.click(ClusterStorageNode.cluster_storage_node_loc)
 
         # 存储节点探活
-        self.wait_click(th_loc_node)
+        time.sleep(1)
+        self.wait(th_loc_node)
         self.click(th_loc_node)
 
         element = self.wait(ClusterStorageNode.yz_loc)
@@ -182,13 +186,15 @@ class ClusterStorageNode(BasePage):
 
         self.click(ClusterStorageNode.cluster_loc)
 
-        self.wait_click(jq_loc)
+        time.sleep(1)
+        self.wait(jq_loc)
         self.click(jq_loc)
 
         self.click(ClusterStorageNode.cluster_storage_node_loc)
 
-
-        self.wait_click(xg_loc_node)
+        #
+        time.sleep(1)
+        self.wait(xg_loc_node)
         self.click(xg_loc_node)
 
         self.wait(ClusterStorageNode.db_loc)
@@ -197,12 +203,13 @@ class ClusterStorageNode(BasePage):
 
         self.gd_loc(db_xz_loc)
 
-        self.wait_click(db_xz_loc)
+        time.sleep(1)
+        self.wait(db_xz_loc)
         self.click(db_xz_loc)
 
         self.click(ClusterStorageNode.qd_button_loc)
 
-        time.sleep(1)
+        time.sleep(3)
 
         element = self.wait(db_yz_loc)
         if element:
@@ -218,13 +225,15 @@ class ClusterStorageNode(BasePage):
         self.wait_click(ClusterStorageNode.cluster_loc)
         self.click(ClusterStorageNode.cluster_loc)
 
-        self.wait_click(jq_loc)
+        time.sleep(1)
+        self.wait(jq_loc)
         self.click(jq_loc)
 
         self.click(ClusterStorageNode.cluster_storage_node_loc)
 
-
-        self.wait_click(delete_loc_node)
+        #
+        time.sleep(1)
+        self.wait(delete_loc_node)
         self.click(delete_loc_node)
 
         self.wait(ClusterStorageNode.delete_qd_button_loc)

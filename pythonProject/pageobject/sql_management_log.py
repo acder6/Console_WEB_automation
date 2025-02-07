@@ -116,7 +116,8 @@ class SqlManagementLog(BasePage):
         self.wait_click(SqlManagementLog.screnn_loc)
         self.click(SqlManagementLog.screnn_loc)
 
-        self.wait_click(SqlManagementLog.derive_loc)
+        time.sleep(1)
+        self.wait(SqlManagementLog.derive_loc)
         self.click(SqlManagementLog.derive_loc)
 
         time.sleep(1)

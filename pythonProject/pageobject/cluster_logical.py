@@ -38,6 +38,7 @@ class ClusterLogical(BasePage):
 
         self.click(ClusterLogical.cluster_loc)
 
+        time.sleep(1)
         self.wait_click(jq_loc)
         self.click(jq_loc)
 
@@ -45,7 +46,6 @@ class ClusterLogical(BasePage):
         self.click(ClusterLogical.logical_loc)
 
         time.sleep(1)
-        self.wait_click(ClusterLogical.register_button_loc)
         self.click(ClusterLogical.register_button_loc)
 
         self.set_keys(ClusterLogical.database_name_loc, logical_name)
@@ -68,7 +68,8 @@ class ClusterLogical(BasePage):
 
         self.click(ClusterLogical.cluster_loc)
 
-        self.wait_click(jq_loc)
+        time.sleep(1)
+        self.wait(jq_loc)
         self.click(jq_loc)
 
         self.wait_click(ClusterLogical.logical_loc)
@@ -96,7 +97,8 @@ class ClusterLogical(BasePage):
 
         self.click(ClusterLogical.cluster_loc)
 
-        self.wait_click(jq_loc)
+        time.sleep(1)
+        self.wait(jq_loc)
         self.click(jq_loc)
 
         self.wait_click(ClusterLogical.logical_loc)
@@ -126,6 +128,7 @@ class ClusterLogical(BasePage):
 
         self.click(ClusterLogical.cluster_loc)
 
+        time.sleep(1)
         self.wait_click(jq_loc)
         self.click(jq_loc)
 

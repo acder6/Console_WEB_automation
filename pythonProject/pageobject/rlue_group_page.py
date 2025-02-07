@@ -42,7 +42,6 @@ class RuleGroupPage(BasePage):
         self.click(RuleGroupPage.register_button_loc)
 
         time.sleep(1)
-        self.wait(RuleGroupPage.name_loc)
         self.set_keys(RuleGroupPage.name_loc,name)
 
         self.set_keys(RuleGroupPage.mx_loc,mx)
@@ -71,13 +70,11 @@ class RuleGroupPage(BasePage):
         self.wait_click(RuleGroupPage.sen_data_loc)
         self.click(RuleGroupPage.sen_data_loc)
 
-        self.wait(RuleGroupPage.rule_loc)
-        self.wait_click(RuleGroupPage.rule_loc)
         self.click(RuleGroupPage.rule_loc)
 
         self.click(RuleGroupPage.rule_grop_loc)
 
-        self.wait(either_loc)
+        time.sleep(1)
         self.wait_click(either_loc)
         self.click(either_loc)
 
@@ -109,6 +106,7 @@ class RuleGroupPage(BasePage):
 
         self.click(RuleGroupPage.rule_grop_loc)
 
+        time.sleep(1)
         self.wait_click(create_loc)
         self.click(create_loc)
 
@@ -128,13 +126,11 @@ class RuleGroupPage(BasePage):
         self.wait_click(RuleGroupPage.sen_data_loc)
         self.click(RuleGroupPage.sen_data_loc)
 
-        self.wait(RuleGroupPage.rule_loc)
-        self.wait_click(RuleGroupPage.rule_loc)
         self.click(RuleGroupPage.rule_loc)
 
         self.click(RuleGroupPage.rule_grop_loc)
 
-        self.wait(del_loc)
+        time.sleep(1)
         self.wait_click(del_loc)
         self.click(del_loc)
 

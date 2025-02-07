@@ -48,7 +48,6 @@ class JmStrategyPage(BasePage):
 
         self.set_keys(JmStrategyPage.name_loc, name)
 
-        self.wait(JmStrategyPage.type_loc)
         self.wait_click(JmStrategyPage.type_loc)
         self.click(JmStrategyPage.type_loc)
 
@@ -87,7 +86,7 @@ class JmStrategyPage(BasePage):
 
         self.click(JmStrategyPage.jm_loc)
 
-        self.wait(either_loc)
+        time.sleep(1)
         self.wait_click(either_loc)
         self.click(either_loc)
 
@@ -101,7 +100,7 @@ class JmStrategyPage(BasePage):
 
         self.click(JmStrategyPage.qd_button_loc)
 
-        time.sleep(1)
+        time.sleep(2)
         element = self.wait(yz_xg_loc)
         if element:
             return self.get_value(yz_xg_loc)
@@ -118,7 +117,7 @@ class JmStrategyPage(BasePage):
 
         self.click(JmStrategyPage.jm_loc)
 
-        self.wait(delete_loc)
+        time.sleep(1)
         self.wait_click(delete_loc)
         self.click(delete_loc)
 

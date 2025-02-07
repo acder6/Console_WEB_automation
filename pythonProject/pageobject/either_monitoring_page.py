@@ -57,7 +57,7 @@ class EitherMonitoringPage(BasePage):
         # 点击主机
         self.click(EitherMonitoringPage.host_loc)
 
-        self.wait(xlk_host_loc)
+        time.sleep(1)
         self.wait_click(xlk_host_loc)
         self.click(xlk_host_loc)
 
@@ -95,8 +95,8 @@ class EitherMonitoringPage(BasePage):
         # 点击数据库
         self.click(EitherMonitoringPage.database_loc)
         # 数据库配置监控
-
-        self.wait_click(xlk_db_loc)
+        time.sleep(1)
+        self.wait(xlk_db_loc)
         self.click(xlk_db_loc)
 
         self.wait_click(EitherMonitoringPage.conf_monitoring_loc)
@@ -125,8 +125,8 @@ class EitherMonitoringPage(BasePage):
 
         self.click(EitherMonitoringPage.cluster_loc)
 
-
-        self.wait_click(jq_loc)
+        time.sleep(1)
+        self.wait(jq_loc)
         self.click(jq_loc)
 
         self.click(EitherMonitoringPage.cluster_monitoring_loc)
